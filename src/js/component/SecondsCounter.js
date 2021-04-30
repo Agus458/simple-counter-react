@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Number from "./Number.js";
 
 export default function SecondsCounter() {
-	// const [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(0);
 
-	// setInterval(() => {
-	// 	setCounter(counter + 1);
-	// });
+	setTimeout(() => {
+		setCounter(counter + 1);
+	}, 1000);
 
 	return (
 		<div className="card bg-dark">
@@ -14,22 +14,22 @@ export default function SecondsCounter() {
 				<div className="row justify-content-between">
 					<div className="col">Q</div>
 					<div className="col">
-						<Number number={9} />
+						<Number number={Math.floor(counter / 100) % 10} />
 					</div>
 					<div className="col">
-						<Number number={9} />
+						<Number number={Math.floor(counter / 100) % 10} />
 					</div>
 					<div className="col">
-						<Number number={9} />
+						<Number number={Math.floor(counter / 100) % 10} />
 					</div>
 					<div className="col">
-						<Number number={Math.floor(counter / 100)} />
+						<Number number={Math.floor(counter / 100) % 10} />
 					</div>
 					<div className="col">
-						<Number number={Math.floor(counter / 10)} />
+						<Number number={Math.floor(counter / 10) % 10} />
 					</div>
 					<div className="col">
-						<Number number={counter} />
+						<Number number={counter % 10} />
 					</div>
 				</div>
 			</div>
